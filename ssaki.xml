@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ssaki xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ssaki.xsd">
+	<gatunki>
+		<ssak id="1" nazwa="Lew" wystepowanie="Afryka">
+			<zdjecie src="lew.jpg">lew.jpg</zdjecie>
+			<link>http://pl.wikipedia.org/lew</link>
+			<dlugosc_zycia mieszkanie="na wolnosci">
+				<samiec>31</samiec>
+				<samica>34</samica>
+			</dlugosc_zycia>
+			<dlugosc_zycia mieszkanie="w niewoli">
+				<samiec>25</samiec>
+				<samica>30</samica>
+			</dlugosc_zycia>
+			<wysokosc>
+				<samiec>120 cm</samiec>
+				<samica>110 cm</samica>
+			</wysokosc>
+		</ssak>
+		
+		<ssak id="2" nazwa="Slon" wystepowanie="Afryka">
+			<zdjecie src="lew.jpg">lew.jpg</zdjecie>
+			<link>http://pl.wikipedia.org/lew</link>
+			<dlugosc_zycia mieszkanie="na wolnosci">
+				<samiec>32</samiec>
+				<samica>60</samica>
+			</dlugosc_zycia>
+			<dlugosc_zycia mieszkanie="w niewoli">
+				<samiec>65</samiec>
+				<samica>65</samica>
+			</dlugosc_zycia>
+			<wysokosc>
+			  <samiec>250 cm</samiec>
+			  <samica>230 cm</samica>
+			</wysokosc>
+		</ssak>
+
+		<ssak id="3" nazwa="Zajac" wystepowanie="Europa">
+			<zdjecie src="lew.jpg">lew.jpg</zdjecie>
+			<link>http://pl.wikipedia.org/lew</link>
+			<dlugosc_zycia mieszkanie="na wolnosci">
+				<samiec>4</samiec>
+				<samica>5</samica>
+			</dlugosc_zycia>
+			<dlugosc_zycia mieszkanie="w niewoli">
+				<samiec>8</samiec>
+				<samica>10</samica>
+			</dlugosc_zycia>
+			<wysokosc>
+			  <samiec>60 cm</samiec>
+			  <samica>56 cm</samica>
+			</wysokosc>
+		</ssak>
+
+		<ssak id="4" nazwa="Sarna" wystepowanie="Europa">
+			<zdjecie src="lew.jpg">lew.jpg</zdjecie>
+			<link>http://pl.wikipedia.org/sarna</link>
+			<dlugosc_zycia mieszkanie="na wolnosci">
+				<samiec>13</samiec>
+				<samica>15</samica>
+			</dlugosc_zycia>
+			<dlugosc_zycia mieszkanie="w niewoli">
+				<samiec>20</samiec>
+				<samica>25</samica>
+			</dlugosc_zycia>
+			<wysokosc>
+			  <samiec>70 cm</samiec>
+			  <samica>67 cm</samica>
+			</wysokosc>
+		</ssak>
+	</gatunki>
+	
+	<zagrozone_gatunki>
+		<opis>
+		gatunki zwierząt zaliczanych do gromady ssaków uznane przez Międzynarodową Unię Ochrony Przyrody i Jej Zasobów za zagrożone wyginięciem. W Czerwonej Księdze IUCN wyróżnione zostały trzy kategorie zagrożenia wyginięciem: krytycznie zagrożone (CR), zagrożone (EN) i narażone (VU), czyli podatne na wyginięcie w najbliższej przyszłości.
+		</opis>
+		<gatunek_lista>zagrozone CR EN narazone VU wymarle</gatunek_lista>
+		<zwierze jakie="wol mindorski" id="1" czy_istnieje="false">
+			<gatunek>zagrozony</gatunek>
+		</zwierze>
+		<zwierze jakie="Muriki polnocny" id="2" czy_istnieje="false">
+			<gatunek>wymarly</gatunek>
+		</zwierze>
+		<zwierze jakie="Wilk rudy" id="3" czy_istnieje="true">
+			<gatunek>zagrozony</gatunek>
+		</zwierze>
+		<zwierze jakie="Drzewniak stokowy" id="4" czy_istnieje="true">
+			<gatunek>zagrozony</gatunek>
+		</zwierze>
+	</zagrozone_gatunki>
+	
+	<Mammalia>
+		<domena>eukarionty</domena>
+		<opis>
+		Gromada stałocieplnych zwierząt z podtypu kręgowców.
+Ssaki (Mammalia) – zwierzęta należące do kręgowców, charakteryzujące się głównie występowaniem gruczołów mlekowych u samic, zazwyczaj obecnością owłosienia (włosy lub futro; silnie zredukowane u gatunków wodnych, jak hipopotamy, u waleni całkowicie zanikają przed porodem lub w trakcie) oraz stałocieplnością (potocznie „ciepłokrwistość”). Ok 60% ssaków utrzymuje temperaturę w granicach 34–39 °C, 40% wykazuje zróżnicowaną jej zmienność[2]. Stałocieplność umożliwia aktywny tryb życia w różnych środowiskach – od mroźnych obszarów podbiegunowych do gorących tropików. Futro i tłuszcz pomagają uchronić się przed zimnem, a wydzielanie potu i szybki oddech pomagają pozbyć się nadmiernego ciepła. Znaczna zmienność temperatury ciała umożliwia im natomiast ograniczenie strat ciepła do otoczenia.
+		</opis>
+		
+		<zdjecie src="ssaki.jpg">ssaki.jpg</zdjecie>
+		<podtyp>kręgowce</podtyp>
+		<nadgromada>czworonogie</nadgromada>
+	
+	</Mammalia>
+</Ssaki>

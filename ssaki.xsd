@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:documentation xml:lang="pl">
+      XML Schema do pliku ssaki.
+    </xs:documentation>
+  </xs:annotation>
+  
+	<xs:element name="Ssaki">
+	  <xs:complexType> 
+		<xs:sequence>
+		  <xs:element name="gatunki" >
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="ssak" type="ssak_typ" maxOccurs="6"/>
+				</xs:sequence>
+			</xs:complexType>
+		  </xs:element>
+		  <xs:element name="zagrozone_gatunki" type="zagrozone_gatunki_typ"/>
+		  <xs:element name="Mammalia" type="Mammalia_typ"/>
+		</xs:sequence>
+	  </xs:complexType>
+	</xs:element>
+	
+	<xs:attribute name="id">
+		<xs:simpleType>
+			<xs:restriction base="xs:byte">
+				<xs:minExclusive value="0"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+
+	<xs:attribute name="nazwa" type="opisType"/>
+	<xs:element name="zdjecie" type="zdjecieType"/>
+
+
+	<xs:complexType name="ssak_typ">
+		<xs:sequence>
+			<xs:element ref="zdjecie" />
+			<xs:element name="link" type="opisType"/>
+			<xs:element name="dlugosc_zycia" type="plec_typ" maxOccurs="2"/>
+			<xs:element name="wysokosc" type="plec_typ" maxOccurs="2"/>
+		</xs:sequence>
+		<xs:attribute ref="id"/>
+		<xs:attribute ref="nazwa"/>
+		<xs:attribute name="wystepowanie" type="kontynent_typ"/>
+	</xs:complexType>
+	
+	<xs:complexType name="plec_typ">
+		<xs:sequence>
+			<xs:element name="samiec" type="unia"/>
+			<xs:element name="samica" type="unia"/>
+		</xs:sequence>
+		<xs:attribute name="mieszkanie" type="opisType"/>
+	</xs:complexType>
+
+	<xs:simpleType name="unia">
+		<xs:union memberTypes="liczba_typ wysokoscType"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="wysokoscType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(.)+\ (cm)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="liczba_typ">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="2500"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	
+	<xs:simpleType name="kontynent_typ">
+		<xs:restriction base="xs:string">
+		<xs:enumeration value="Azja"/>
+		  <xs:enumeration value="Afryka"/>
+		  <xs:enumeration value="Europa"/>
+		  <xs:enumeration value="Ameryka Północna"/>
+		  <xs:enumeration value="Ameryka Południowa"/>
+		  <xs:enumeration value="Australia i Oceania"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+
+	<xs:complexType name="zagrozone_gatunki_typ">
+		<xs:sequence>
+			<xs:element ref="opis"/>
+			<xs:element name="gatunek_lista" type="gatunek_listaType"/>
+			<xs:element name="zwierze" type="zwierzeType"  maxOccurs="10"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="gatunek_listaType">
+		<xs:list itemType="opisType"/>
+	</xs:simpleType>
+
+	<xs:element name="opis" type="opisType"/>
+
+	<xs:simpleType name="opisType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:group name="zwierze-GRUPA">
+		<xs:sequence>
+			<xs:element name="gatunek">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="zagrozony"/>
+						<xs:enumeration value="wymarly"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+
+
+
+
+	<xs:complexType name="zwierzeType">
+		<xs:group ref="zwierze-GRUPA"/>
+		<xs:attribute name="jakie" type="opisType"/>
+		<xs:attribute ref="id"/>
+		<xs:attribute name="czy_istnieje" type="xs:boolean"/>
+	</xs:complexType>
+
+	<xs:complexType name="Mammalia_typ">
+		<xs:all>
+			<xs:element name="domena" type="opisType"/>
+			<xs:element ref="opis"/>
+			<xs:element ref="zdjecie" />
+			<xs:element name="podtyp" type="opisType"/>
+			<xs:element name="nadgromada" type="nadgromadaType"/>
+		</xs:all>
+	</xs:complexType>
+
+	<xs:complexType name="zdjecieType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="src" type="srcType"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="srcType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(.)+\.(jpg)"/>
+		</xs:restriction>
+	</xs:simpleType>	
+
+	<xs:simpleType name="nadgromadaType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="czworonogie"/>
+			<xs:enumeration value="dwunogie"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	
+</xs:schema>

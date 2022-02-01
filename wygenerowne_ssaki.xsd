@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Ssaki">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="gatunki">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="ssak">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="zdjecie">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="src" type="xs:string" use="required" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="link" type="xs:string" />
+                    <xs:element maxOccurs="unbounded" name="dlugosc_zycia">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="samiec" type="xs:unsignedByte" />
+                          <xs:element name="samica" type="xs:unsignedByte" />
+                        </xs:sequence>
+                        <xs:attribute name="mieszkanie" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="wysokosc">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="samiec" type="xs:string" />
+                          <xs:element name="samica" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="nazwa" type="xs:string" use="required" />
+                  <xs:attribute name="wystepowanie" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="zagrozone_gatunki">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="opis" type="xs:string" />
+              <xs:element name="gatunek_lista" type="xs:string" />
+              <xs:element maxOccurs="unbounded" name="zwierze">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="gatunek" type="xs:string" />
+                  </xs:sequence>
+                  <xs:attribute name="jakie" type="xs:string" use="required" />
+                  <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+                  <xs:attribute name="czy_istnieje" type="xs:boolean" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Mammalia">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="domena" type="xs:string" />
+              <xs:element name="opis" type="xs:string" />
+              <xs:element name="zdjecie">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="src" type="xs:string" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="podtyp" type="xs:string" />
+              <xs:element name="nadgromada" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
